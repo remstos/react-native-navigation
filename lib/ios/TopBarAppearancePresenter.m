@@ -34,19 +34,23 @@
 - (void)updateBackgroundAppearance {
     if (self.transparent) {
         [self.getAppearance configureWithTransparentBackground];
-        [self.getScrollEdgeAppearance configureWithTransparentBackground];
+//        [self.getScrollEdgeAppearance configureWithTransparentBackground];
     } else if (self.backgroundColor) {
         [self.getAppearance configureWithOpaqueBackground];
-        [self.getScrollEdgeAppearance configureWithOpaqueBackground];
+//        [self.getScrollEdgeAppearance configureWithOpaqueBackground];
         [self.getAppearance setBackgroundColor:self.backgroundColor];
-        [self.getScrollEdgeAppearance setBackgroundColor:self.backgroundColor];
+//        [self.getScrollEdgeAppearance setBackgroundColor:self.backgroundColor];
     } else if (self.translucent) {
         [self.getAppearance configureWithDefaultBackground];
-        [self.getScrollEdgeAppearance configureWithDefaultBackground];
+//        [self.getScrollEdgeAppearance configureWithDefaultBackground];
     }  else {
         [self.getAppearance configureWithOpaqueBackground];
-        [self.getScrollEdgeAppearance configureWithOpaqueBackground];
+//        [self.getScrollEdgeAppearance configureWithOpaqueBackground];
     }
+	
+	// Changed. this is the appearance of the large title state of the navigation bar.
+	// Todo: make an option for largeTitle background.
+	[self.getScrollEdgeAppearance configureWithTransparentBackground];
 }
 
 - (void)showBorder:(BOOL)showBorder {
