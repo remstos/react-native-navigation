@@ -210,6 +210,11 @@ export interface OptionsTopBarTitle {
    * #### (Android specific)
    */
   alignment?: 'center' | 'fill';
+  /**
+   * Title left margin
+   * #### (Android specific)
+   */
+  leftMargin?: number;
 }
 
 export interface OptionsTopBarSubtitle {

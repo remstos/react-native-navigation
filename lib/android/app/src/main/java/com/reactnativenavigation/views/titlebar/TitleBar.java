@@ -247,6 +247,16 @@ public class TitleBar extends Toolbar {
         setLayoutParams(lp);
     }
 
+    public void setLeftMargin(int leftMargin) {
+        int pixelLeftMargin = UiUtils.dpToPx(getContext(), leftMargin);
+        if (getLayoutParams() instanceof MarginLayoutParams) {
+            MarginLayoutParams lp = (MarginLayoutParams) getLayoutParams();
+            if (lp.leftMargin == pixelLeftMargin) return;
+            lp.leftMargin = pixelLeftMargin;
+            setLayoutParams(lp);
+        }
+    }
+
     public void setTopMargin(int topMargin) {
         int pixelTopMargin = UiUtils.dpToPx(getContext(), topMargin);
         if (getLayoutParams() instanceof MarginLayoutParams) {

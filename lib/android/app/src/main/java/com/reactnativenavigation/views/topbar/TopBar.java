@@ -125,6 +125,10 @@ public class TopBar extends AppBarLayout implements ScrollEventListener.ScrollAw
         titleBar.setTopMargin(topMargin);
     }
 
+    public void setTitleLeftMargin(int leftMargin) {
+        titleBar.setLeftMargin(leftMargin);
+    }
+
     public void setTitle(String title) {
         titleBar.setTitle(title);
     }

@@ -176,6 +176,7 @@ public class StackPresenter {
         topBar.setTitleHeight(topBarOptions.title.height.get(UiUtils.getTopBarHeightDp(activity)));
         topBar.setTitle(topBarOptions.title.text.get(""));
         topBar.setTitleTopMargin(topBarOptions.title.topMargin.get(0));
+        topBar.setTitleLeftMargin(topBarOptions.title.leftMargin.get(0));
 
         if (topBarOptions.title.component.hasValue()) {
             if (titleControllers.containsKey(component)) {

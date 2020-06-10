@@ -33,6 +33,7 @@ public class TitleOptions {
         options.alignment = Alignment.fromString(TextParser.parse(json, "alignment").get(""));
         options.height = NumberParser.parse(json, "height");
         options.topMargin = NumberParser.parse(json, "topMargin");
+        options.leftMargin = NumberParser.parse(json, "leftMargin");
 
         return options;
     }
@@ -45,6 +46,7 @@ public class TitleOptions {
     public Component component = new Component();
     public Number height = new NullNumber();
     public Number topMargin = new NullNumber();
+    public Number leftMargin = new NullNumber();
 
     void mergeWith(final TitleOptions other) {
         if (other.text.hasValue()) text = other.text;
@@ -55,6 +57,7 @@ public class TitleOptions {
         if (other.component.hasValue()) component = other.component;
         if (other.height.hasValue()) height = other.height;
         if (other.topMargin.hasValue()) topMargin = other.topMargin;
+        if (other.leftMargin.hasValue()) leftMargin = other.leftMargin;
     }
 
     void mergeWithDefault(TitleOptions defaultOptions) {
@@ -66,5 +69,6 @@ public class TitleOptions {
         component.mergeWithDefault(defaultOptions.component);
         if (!height.hasValue()) height = defaultOptions.height;
         if (!topMargin.hasValue()) topMargin = defaultOptions.topMargin;
+        if (!leftMargin.hasValue()) leftMargin = defaultOptions.leftMargin;
     }
 }
