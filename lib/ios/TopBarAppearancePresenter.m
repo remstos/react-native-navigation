@@ -48,7 +48,7 @@
 //        [self.getScrollEdgeAppearance configureWithOpaqueBackground];
     }
 	
-	// Changed. this is the appearance of the large title state of the navigation bar.
+	// [Luko]: Changed. this is the appearance of the large title state of the navigation bar.
 	// Todo: make an option for largeTitle background.
 	[self.getScrollEdgeAppearance configureWithTransparentBackground];
 }
@@ -70,6 +70,8 @@
     UIColor* fontColor = [titleOptions.color getWithDefaultValue:nil];
     
     self.getAppearance.titleTextAttributes = [RNNFontAttributesCreator createFromDictionary:self.getAppearance.titleTextAttributes fontFamily:fontFamily fontSize:fontSize defaultFontSize:nil fontWeight:fontWeight color:fontColor defaultColor:nil];
+    // [Luko]: Added to fix title attributes on scroll
+    self.getScrollEdgeAppearance.titleTextAttributes = [RNNFontAttributesCreator createFromDictionary:self.getAppearance.titleTextAttributes fontFamily:fontFamily fontSize:fontSize defaultFontSize:nil fontWeight:fontWeight color:fontColor defaultColor:nil];
 }
 
 - (void)setLargeTitleAttributes:(RNNLargeTitleOptions *)largeTitleOptions {
@@ -79,6 +81,8 @@
     UIColor* fontColor = [largeTitleOptions.color getWithDefaultValue:nil];
     
     self.getAppearance.largeTitleTextAttributes = [RNNFontAttributesCreator createFromDictionary:self.getAppearance.largeTitleTextAttributes fontFamily:fontFamily fontSize:fontSize defaultFontSize:nil fontWeight:fontWeight color:fontColor defaultColor:nil];
+    // [Luko]: Added to fix largeTitle attributes on scroll
+    self.getScrollEdgeAppearance.largeTitleTextAttributes = [RNNFontAttributesCreator createFromDictionary:self.getAppearance.largeTitleTextAttributes fontFamily:fontFamily fontSize:fontSize defaultFontSize:nil fontWeight:fontWeight color:fontColor defaultColor:nil];
 }
 
 - (UINavigationBarAppearance *)getAppearance {
